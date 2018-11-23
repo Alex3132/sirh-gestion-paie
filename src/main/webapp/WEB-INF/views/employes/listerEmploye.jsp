@@ -6,15 +6,20 @@
 <title>PAIE</title>
 </head>
 <body>
-	<ul>
-		<c:forEach var="employe" items="${listemploye}">
+	<table>
+	
+			<c:forEach var="employe" items="${listemploye}">
 
 			<li>
 			<c:out value="${employe.creation}"/>
 				<c:out value="${employe.matricule}"/>
 				<c:out value="${employe.grade.code}"/></li>
-
+				
 		</c:forEach>
-	</ul>
+	
+	</table>
+<div class="text-right">
+<a class="btn btn-primary" href="creer">Créer employé</a>
+</div>
 </body>
 </html>

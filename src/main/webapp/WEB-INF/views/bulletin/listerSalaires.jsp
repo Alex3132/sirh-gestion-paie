@@ -6,19 +6,20 @@
 <title>PAIE</title>
 </head>
 <body>
-	<ul>
-		<c:forEach var="salaire" items="${mapBulletinCalcul}">
+	<table>
+			<c:forEach var="salaire" items="${mapBulletinCalcul}">
 
-			<li>
-				<c:out value="${salaire.key.remunerationEmploye.creation}"/>
-				<c:out value="${salaire.key.periode.dateAffichee}"/>
-				<c:out value="${salaire.key.remunerationEmploye.matricule}"/>
-				<c:out value="${salaire.value.salaireBrut}"/>
-				<c:out value="${salaire.value.netImposable}"/>
-				<c:out value="${salaire.value.netAPayer}"/>
-			</li>
+			<tr>
+				<td><c:out value="${salaire.key.remunerationEmploye.creation}"/></td>
+				<td><c:out value="${salaire.key.periode.dateAffichee}"/></td>
+				<td><c:out value="${salaire.key.remunerationEmploye.matricule}"/></td>
+				<td><c:out value="${salaire.value.salaireBrut}"/></td>
+				<td><c:out value="${salaire.value.netImposable}"/></td>
+				<td><c:out value="${salaire.value.netAPayer}"/></td>
+				<td><a class="btn btn-primary" href="recapitulatif?idBulletin=${bulletin.key.id}">Afficher</a>
+			</tr>
 
 		</c:forEach> 
-	</ul>
+	</table>
 </body>
 </html>

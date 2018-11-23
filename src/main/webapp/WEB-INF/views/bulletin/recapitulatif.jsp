@@ -42,7 +42,6 @@
 	</table>
 
 	<p>Cotisations</p>
-	<ul>
 		<c:forEach var="cotisation"
 			items="${bulletin.remunerationEmploye.profilRemuneration.cotisations}">
  <c:if test = "${cotisation.imposable==false}">
@@ -61,7 +60,7 @@
 			
 
 		</c:forEach>
-	</ul>
+
 				<tr>
 				<td>Total Retenue</td>
 				<td><c:out value="${Brut.totalRetenueSalarial}" /></td>
@@ -87,7 +86,6 @@
 			
 
 		</c:forEach>
-	</ul>
 	<p>NET A PAYER : <c:out value="${Brut.netAPayer}" /></p>
 </body>
 </html>
