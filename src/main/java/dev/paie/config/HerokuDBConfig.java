@@ -16,9 +16,9 @@ public class HerokuDBConfig {
 
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
-        String username = "postgres";
-        String password = "Caline32=!";
-        String dbUrl = "jdbc:postgresql://127.0.0.1:5432/sirh-paie";
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
 
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
